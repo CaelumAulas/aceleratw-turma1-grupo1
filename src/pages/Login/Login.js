@@ -1,9 +1,11 @@
 import React from 'react'
 
+import BaseLayout from '../../containers/BaseLayout/BaseLayout'
+
 const Login = () => (
-    <div>
+    <BaseLayout pageName="Login">
         Login
-    </div>
+    </BaseLayout>
 )
 
 export default Login

@@ -15,34 +15,18 @@ import Dashboard from '../pages/Dashboard/Dashboard'
 const App = () => {
   return (
     <div className="App">
-    <Router>
-        <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Dashboard</Link>
-              </li>
-              <li>
-                <Link to="/signup">Cadastro</Link>
-              </li>
-              <li>
-                <Link to="/login">Login</Link>
-              </li>
-            </ul>
-          </nav>
-
-          <Switch>
-            <Route path="/signup">
-              <SignUp />
-            </Route>
-            <Route path="/login">
-              <Login />
-            </Route>
-            <Route path="/">
-              <Dashboard />
-            </Route>
-          </Switch>
-        </div>
+      <Router>
+        <Switch>
+          <Route path="/signup">
+            <SignUp />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/">
+            <Dashboard />
+          </Route>
+        </Switch>
       </Router>
     </div>
   )
