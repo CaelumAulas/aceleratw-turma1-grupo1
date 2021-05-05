@@ -1,5 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {
+  Link
+} from "react-router-dom"
 
 import { 
   AppBar,
@@ -65,19 +68,15 @@ const BaseLayout = (props) => {
       <div className={classes.toolbar} />
       <Divider />
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-           tudo bem
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            oie
-          </ListItem>
-        ))}
+        <ListItem>
+          <Link to="/">Dashboard</Link>
+        </ListItem>
+        <ListItem>
+          <Link to="/signup">Cadastro</Link>
+        </ListItem>
+        <ListItem>
+          <Link to="/login">Login</Link>
+        </ListItem>
       </List>
     </div>
   )
@@ -99,7 +98,7 @@ const BaseLayout = (props) => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Responsive drawer
+            {props.pageName}
           </Typography>
         </Toolbar>
       </AppBar>

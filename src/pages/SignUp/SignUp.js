@@ -1,9 +1,11 @@
 import React from 'react'
 
+import BaseLayout from '../../containers/BaseLayout/BaseLayout'
+
 const SignUp = () => (
-    <div>
-        Signup
-    </div>
+    <BaseLayout pageName="SignUp">
+        SignUp
+    </BaseLayout>
 )
 
 export default SignUp
