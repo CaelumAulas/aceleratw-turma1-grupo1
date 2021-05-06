@@ -79,6 +79,7 @@ const BaseLayout = (props) => {
         </ListItem>
         <ListItem>
           <Link to="/usuarios">Usuários</Link>
+
         </ListItem>
       </List>
     </div>
