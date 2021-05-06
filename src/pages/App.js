@@ -11,6 +11,8 @@ import Login from '../pages/Login/Login'
 import SignUp from '../pages/SignUp/SignUp'
 import Dashboard from '../pages/Dashboard/Dashboard'
 import Users from "../pages/Users/Users";
+import Brands from "../pages/Brands/Brands";
+
 
 const App = () => {
   return (
@@ -20,19 +22,18 @@ const App = () => {
         <Route path="/usuarios">
             <Users />
           </Route>
+          <Route path="/marcas">
+            <Brands/>
+        </Route>
           <Route path="/signup">
             <SignUp />
           </Route>
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/users">
-            <Users />
-          </Route>
           <Route path="/">
             <Dashboard />
           </Route>
-          
         </Switch>
       </Router>
     </div>
