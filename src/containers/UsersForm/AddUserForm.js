@@ -7,7 +7,7 @@ import {
 
 import './style.css'
 
-const UsersForm = () => (
+const AddUserForm = () => (
     <form className="usersForm" noValidate autoComplete="off">
         <div className="usersForm--inputs">
             <TextField id="standard-basic" label="Usuário" />
@@ -18,4 +18,4 @@ const UsersForm = () => (
     </form>
 )
 
-export default UsersForm
+export default AddUserForm

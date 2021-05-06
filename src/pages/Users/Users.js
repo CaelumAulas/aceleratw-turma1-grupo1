@@ -1,11 +1,11 @@
 import React from 'react'
 
 import BaseLayout from '../../containers/BaseLayout/BaseLayout'
-import UsersForm from "../../containers/UsersForm/UsersForm";
+import AddUserForm from "../../containers/UsersForm/AddUserForm";
 
 const Users = () => (
     <BaseLayout pageName="Usuários">
-        <UsersForm />
+        <AddUserForm />
     </BaseLayout>
 )
 
