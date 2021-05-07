@@ -10,6 +10,7 @@ import './App.css'
 import Login from '../pages/Login/Login'
 import SignUp from '../pages/SignUp/SignUp'
 import Dashboard from '../pages/Dashboard/Dashboard'
+import RegisterVehicles from './RegisterVehicles/RegisterVehicles'
 
 const App = () => {
   return (
@@ -21,6 +22,9 @@ const App = () => {
           </Route>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/cadastro-veiculo">
+            <RegisterVehicles />
           </Route>
           <Route path="/">
             <Dashboard />

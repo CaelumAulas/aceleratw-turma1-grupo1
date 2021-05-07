@@ -77,6 +77,9 @@ const BaseLayout = (props) => {
         <ListItem>
           <Link to="/login">Login</Link>
         </ListItem>
+        <ListItem>
+          <Link to="/cadastro-veiculo">Cadastrar/Editar Veículos</Link>
+        </ListItem>
       </List>
     </div>
   )
