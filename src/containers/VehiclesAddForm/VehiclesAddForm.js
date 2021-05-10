@@ -24,19 +24,25 @@ const rows = [
 
 const VehiclesAddForm = () => (
   <form className="vehiclesAddForm" noValidate autoComplete="off">
-    <div className="vehiclesAddForm--inputs">
+    <div className="vehiclesAddForm--select">
         <InputLabel id="standard-basic">Marca</InputLabel>
         <Select id="standard-basic" label="Marca">
             {rows.map((row) => {
                 return <MenuItem value={row.index}>{row.vehicle}</MenuItem>;
             })}
         </Select>
+    </div>
+    <div className="vehiclesAddForm--inputs">
         <TextField id="standard-basic" label="Modelo" />
         <TextField id="standard-basic" label="Ano" />
         <TextField id="standard-basic" label="Valor" />
     </div>
-    <Button variant="contained">Cadastrar</Button>
-    <Button variant="contained">Cancelar</Button>
+    <Button variant="contained" color="primary">
+        Cadastrar
+    </Button>
+    <Button variant="contained" color="secondary">
+        Cancelar
+    </Button>
   </form>
 )
 
