@@ -8,12 +8,16 @@ import SignUp from "../pages/SignUp/SignUp";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Users from "../pages/Users/Users";
 import Brands from "../pages/Brands/Brands";
+import AddUser from "../pages/AddUser/AddUser";
 
 const App = () => {
   return (
     <div className="App">
       <Router>
         <Switch>
+          <Route path="/usuarios/cadastrar-usuarios">
+            <AddUser />
+          </Route>
           <Route path="/usuarios">
             <Users />
           </Route>
