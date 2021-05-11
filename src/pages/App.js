@@ -8,6 +8,7 @@ import SignUp from "../pages/SignUp/SignUp";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Users from "../pages/Users/Users";
 import Brands from "../pages/Brands/Brands";
+import RegisterVehicles from './RegisterVehicles/RegisterVehicles';
 
 const App = () => {
   return (
@@ -25,6 +26,9 @@ const App = () => {
           </Route>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/cadastro-veiculo">
+            <RegisterVehicles />
           </Route>
           <Route path="/">
             <Dashboard />
