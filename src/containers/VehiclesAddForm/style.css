@@ -1,0 +1,11 @@
+.vehiclesAddForm--inputs {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.vehiclesAddForm--select {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
