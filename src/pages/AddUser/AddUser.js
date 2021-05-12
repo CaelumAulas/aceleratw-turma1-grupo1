@@ -9,5 +9,4 @@ const AddUser = () => (
     </BaseLayout>
 )
 
-
 export default AddUser

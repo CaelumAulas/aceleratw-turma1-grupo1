@@ -1,5 +1,5 @@
 .usersForm--inputs{
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     margin-bottom: 20px;
 }
