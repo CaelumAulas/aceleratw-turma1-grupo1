@@ -9,6 +9,7 @@ import Dashboard from "../pages/Dashboard/Dashboard";
 import Users from "../pages/Users/Users";
 import Brands from "../pages/Brands/Brands";
 import AddUser from "../pages/AddUser/AddUser";
+import RegisterVehicles from "../pages/RegisterVehicles/RegisterVehicles";
 
 const App = () => {
     return (
@@ -29,6 +30,9 @@ const App = () => {
                     </Route>
                     <Route path="/login">
                         <Login/>
+                    </Route>
+                    <Route path="/cadastro-veiculo">
+                      <RegisterVehicles />
                     </Route>
                     <Route path="/">
                         <Dashboard/>
