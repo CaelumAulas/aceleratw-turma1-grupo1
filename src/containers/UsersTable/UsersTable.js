@@ -25,7 +25,6 @@ const rows = [
     createData("Vitor"),
 ];
 
-
 const UsersTable = () => {
     let {path, url} = useRouteMatch();
 
@@ -56,8 +55,6 @@ const UsersTable = () => {
             <Link to={`${url}/cadastrar-usuarios`}>
                 <Button variant="contained">incluir</Button>
             </Link>
-
-
         </section>
     );
 }
