@@ -34,7 +34,7 @@ const App = () => {
           <Route path="/cadastro-marca">
             <AddBrands />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <Dashboard />
           </Route>
         </Switch>
