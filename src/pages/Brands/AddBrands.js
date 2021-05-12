@@ -1,12 +1,16 @@
-import React from 'react'
+import React from 'react';
 
-import BaseLayout from '../../containers/BaseLayout/BaseLayout'
-import BrandsForm from '../../containers/BrandsForm/BrandsForm'
+import BaseLayout from '../../containers/BaseLayout/BaseLayout';
+import BrandsForm from '../../containers/BrandsForm/BrandsForm';
 
-const AddBrands = () =>(
+const AddBrands = () => (
     <BaseLayout>
-        <BrandsForm />
+        <BrandsForm sendBrand={sendBrand} />
     </BaseLayout>
-)
+);
 
-export default AddBrands
+function sendBrand(brand) {
+    console.log(brand);
+}
+
+export default AddBrands;
