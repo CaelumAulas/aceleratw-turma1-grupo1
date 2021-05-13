@@ -81,6 +81,9 @@ const BaseLayout = (props) => {
           <Link to="/cadastro-veiculo">Cadastrar/Editar Veículos</Link>
         </ListItem>
         <ListItem>
+          <Link to="/veiculos">Veículos</Link>
+        </ListItem>
+        <ListItem>
           <Link to="/usuarios">Usuários</Link>
         </ListItem>
         <ListItem>
