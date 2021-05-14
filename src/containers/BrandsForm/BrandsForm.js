@@ -60,6 +60,7 @@ const BrandsForm = ({ sendBrand }) => {
             id="standard-basic"
             label="Marca"
             name="brand"
+            value={brand}
             required
           />
         </div>
