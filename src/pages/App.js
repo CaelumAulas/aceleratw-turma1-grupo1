@@ -9,6 +9,7 @@ import Dashboard from "../pages/Dashboard/Dashboard";
 import Users from "../pages/Users/Users";
 import Brands from "../pages/Brands/Brands";
 import RegisterVehicles from './RegisterVehicles/RegisterVehicles';
+import AddBrands from "../pages/Brands/AddBrands";
 
 const App = () => {
   return (
@@ -30,7 +31,10 @@ const App = () => {
           <Route path="/cadastro-veiculo">
             <RegisterVehicles />
           </Route>
-          <Route path="/">
+          <Route path="/cadastro-marca">
+            <AddBrands />
+          </Route>
+          <Route exact path="/">
             <Dashboard />
           </Route>
         </Switch>
