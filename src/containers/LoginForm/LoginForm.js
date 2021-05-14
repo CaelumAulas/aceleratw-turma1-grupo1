@@ -17,9 +17,8 @@ const LoginForm = ({ toSend }) => {
         validate: false,
         text: "A senha deve ter pelo menos 8 dígitos",
       };
-    } else {
-      return { buttonEnabled: true, valido: true, text: "" };
     }
+    return { buttonEnabled: true, valido: true, text: "" };
   }
 
   return (
