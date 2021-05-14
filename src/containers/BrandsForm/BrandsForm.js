@@ -51,16 +51,16 @@ const BrandsForm = ({ sendBrand }) => {
           <TextField
             onChange={(event) => {
               setBrand(event.target.value);
-            }} value={brand}
+            }}
             onBlur={(event) => {
               setErrors({ validator: validate(brand) });
             }}
             error={!errors.validator.isvalid}
             helperText={errors.validator.text}
             id="standard-basic"
+            value={brand}
             label="Marca"
             name="brand"
-            value={brand}
             required
           />
         </div>
