@@ -14,15 +14,17 @@ const BrandsForm = ({ sendBrand }) => {
       text: "",
     };
 
+    if (brand.length <= 2) {
+      isBrandValid = {
+        isvalid: false,
+        text: "A marca deve ter pelo menos 3 dígitos",
+      };
+    }
+
     if (brand.length === 0) {
       isBrandValid = {
         isvalid: false,
         text: "Preencha o campo Marca",
-      };
-    } else if (brand.length <= 2) {
-      isBrandValid = {
-        isvalid: false,
-        text: "A marca deve ter pelo menos 3 dígitos",
       };
     }
 
