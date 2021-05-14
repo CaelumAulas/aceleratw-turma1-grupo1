@@ -24,6 +24,7 @@ const LoginForm = ({ toSend }) => {
   return (
     <Container maxWidth="sm">
       <form
+        data-testid="LoginForm"
         onSubmit={(event) => {
           event.preventDefault();
           toSend({ user, password });
@@ -44,6 +45,7 @@ const LoginForm = ({ toSend }) => {
             id="standard-basic"
             label="Usuário"
             margin="normal"
+            inputProps={{ "data-testid": "user" }}
             fullWidth
           />
           <TextField
@@ -63,6 +65,7 @@ const LoginForm = ({ toSend }) => {
             id="standard-basic"
             label="Senha"
             fullWidth
+            inputProps={{ "data-testid": "password" }}
           />
         </div>
         <Button
@@ -70,6 +73,7 @@ const LoginForm = ({ toSend }) => {
           type="submit"
           variant="contained"
           color="primary"
+          data-testid="LoginButton"
         >
           Logar
         </Button>
