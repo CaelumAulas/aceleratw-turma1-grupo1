@@ -31,7 +31,7 @@ const UsersTable = () => {
     return (
         <section>
             <TableContainer component={Paper}>
-                <Table aria-label="simple table">
+                <Table aria-label="Users Table">
                     <TableHead>
                         <TableRow>
                             <TableCell>Nome </TableCell>
@@ -49,7 +49,7 @@ const UsersTable = () => {
                 </Table>
             </TableContainer>
             <Button variant="contained" color="primary">
-                excluir
+                Excluir
             </Button>
             <Button variant="contained">alterar</Button>
             <Link to={`${url}/cadastrar-usuarios`}>

@@ -55,19 +55,25 @@ const VehiclesAddForm = ({toSend}) => {
         setValue(event.target.value);
     };
 
-    function isValueValid(value){
-        if(+value <= 0){
-            return {
-                buttonEnabled: false,
-                isValid: false,
-                text: 'Adicione um valor maior que 0',
-            }
-        } else {
-            return { buttonEnabled:true, isValid: true, text: "" }
+    function isValueValid(value) {
+        if (+ value <= 0) {
+            return {buttonEnabled: false, isValid: false, text: 'Adicione um valor maior que 0'}
         }
+        return {buttonEnabled: true, isValid: true, text: ""}
     }
 
-    function goBack(event){
+    function submitForm(event) {
+        event.preventDefault();
+        const bag = {
+            marca: brand, 
+            modelo: model, 
+            ano: year,
+             valor: value
+        }
+        toSend(bag);
+    }
+
+    function goBack(event) {
         event.preventDefault();
         window.history.back();
     }
@@ -76,12 +82,7 @@ const VehiclesAddForm = ({toSend}) => {
     return (
         <Container maxWidth="">
             <form variant="filled"
-                onSubmit={
-                    (event) => {
-                        event.preventDefault();
-                        toSend({marca: brand, modelo: model, ano: year, valor: value});
-                    }
-                }
+                onSubmit={(event) => submitForm(event)}
                 className="vehiclesAddForm"
                 noValidate
                 autoComplete="off">
@@ -91,66 +92,55 @@ const VehiclesAddForm = ({toSend}) => {
                         id="standard-basic"
                         value={brand}
                         label="Marca"
-                        required
-                        >
-                        <MenuItem value="">
-                            <em>Nenhum</em>
-                        </MenuItem>
-                        {
-                        rows.map((row) => {
-                            return <MenuItem value={
-                                row.index
-                            }>
-                                {
-                                row.vehicle
-                            } </MenuItem>;
-                        })
-                    } </Select>
+                        required>
+                        <MenuItem value=""><em>Nenhum</em></MenuItem>
+                        {rows.map((row) => { 
+                            return <MenuItem value={row.index}>{row.vehicle}</MenuItem>;
+                        })} 
+                    </Select>
                 </div>
                 <div className="vehiclesAddForm--inputs">
                     <TextField onChange={handleModeloChange}
                         value={model}
                         id="standard-basic"
                         label="Modelo"
-                        required
-                        />
+                        required/>
                     <TextField onChange={handleYearChange}
                         value={year}
                         id="standard-basic"
                         label="Ano"
                         type="number"
-                        required
-                        />
+                        required/>
                     <TextField onChange={handleValueChange}
                         value={value}
-                        onBlur={(event) => {
-                            setErrors({validator: isValueValid(value)})
-                        }}
-                        error={!errors.validator.isValid}
-                        helperText={errors.validator.text}
+                        onBlur={
+                            (event) => {
+                                setErrors({validator: isValueValid(value)})
+                            }
+                        }
+                        error={
+                            !errors.validator.isValid
+                        }
+                        helperText={
+                            errors.validator.text
+                        }
                         id="standard-basic"
                         label="Valor"
                         type="number"
-                        required
-                        />
+                        required/>
                 </div>
-                <Button variant="contained" color="primary"
-                disabled={!brand 
-                    || !model 
-                    || !year
-                    || !value
-                    || !errors.validator.buttonEnabled
-                }
-                >
-                    Cadastrar
-                </Button>
-                <Button variant="contained" type="submit" color="secondary"
-                onClick={goBack}
-                >
-                    Cancelar
-                </Button>
-            </form>
-        </Container>
+            <Button variant="contained" color="primary" type="submit"
+                disabled={
+                    !brand || !model || !year || !value || !errors.validator.buttonEnabled
+            }>
+                Cadastrar
+            </Button>
+            <Button variant="contained" color="secondary"
+                onClick={goBack}>
+                Cancelar
+            </Button>
+        </form>
+    </Container>
     )
 
 }

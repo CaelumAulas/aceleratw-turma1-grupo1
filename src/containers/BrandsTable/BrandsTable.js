@@ -22,7 +22,7 @@ const rows = [
 const BrandsTable = () => (
   <section>
     <TableContainer component={Paper}>
-      <Table aria-label="simple table">
+      <Table aria-label="Users Table">
         <TableHead>
           <TableRow>
             <TableCell>Marcas</TableCell>
@@ -40,7 +40,7 @@ const BrandsTable = () => (
       </Table>
     </TableContainer>
     <Button variant="contained" color="primary">
-      excluir
+      Excluir
     </Button>
     <Button variant="contained">alterar</Button>
     <Button variant="contained">incluir</Button>
