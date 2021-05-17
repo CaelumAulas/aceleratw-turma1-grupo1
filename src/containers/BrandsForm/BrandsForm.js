@@ -53,7 +53,7 @@ const BrandsForm = ({ sendBrand }) => {
               setBrand(event.target.value);
             }}
             onBlur={(event) => {
-              setErrors({ validator: validate(event.target.brand) });
+              setErrors({ validator: validate(event.target.value) });
             }}
             error={!errors.validator.isvalid}
             helperText={errors.validator.text}

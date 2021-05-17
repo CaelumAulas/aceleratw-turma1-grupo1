@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { fireEvent, render, screen } from '@testing-library/react';
-import BrandsForm, { validate } from '../../../containers/BrandsForm/BrandsForm';
+import BrandsForm from '../../../containers/BrandsForm/BrandsForm';
 
 describe('Testando formulário de inserção de marca...', () => {
     it('se existe label', () => {
