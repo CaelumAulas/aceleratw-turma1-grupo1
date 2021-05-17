@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { fireEvent, getByText, render, screen } from '@testing-library/react';
-import BrandsForm, { sendForm } from '../../../containers/BrandsForm/BrandsForm';
+import BrandsForm, { sendForm, validate } from '../../../containers/BrandsForm/BrandsForm';
 
 describe('Testando o formulário de inserção de marca', () => {
     // it('testar o metodo sendForm', () => {
@@ -27,27 +27,14 @@ describe('Testando o formulário de inserção de marca', () => {
         expect(screen.getByText('Cancelar')).toBeInTheDocument();
     });
 
-    // it('testar o evento do botao de adicionar', () => {
-    //     const sendBrand = jest.fn();
+    it('testar o evento do botao de adicionar', () => {
+        const onSubmit = jest.fn();
 
-    //     render(<BrandsForm sendBrand={sendBrand} />);
+        render(<BrandsForm sendForm={onSubmit} />);
 
-    //     // const input = screen.getByText('Marca');
+        const form = screen.getByTestId('BrandForm');
+        fireEvent.submit(form);
 
-    //     // fireEvent.change(input, {target: {value: "Chevrolet"}});
-    //     fireEvent.click(screen.getByText('Cadastrar'));
-
-    //     expect(sendBrand).toHaveBeenCalled();
-    // });
-
-    // it('testar o evento do botao de adicionar', () => {
-
-    //     const funcaoBtn = jest.fn();
-
-    //     render(<BrandsForm sendBrand={funcaoBtn} />);
-
-    //     fireEvent.click(screen.getByText("Cadastrar"));
-
-    //     expect(funcaoBtn).toHaveBeenCalled();
-    // })
+        expect(onSubmit).toHaveBeenCalled();
+    });
 })

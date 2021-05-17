@@ -40,7 +40,9 @@ const BrandsForm = ({ sendBrand }) => {
 
   return (
     <section>
-      <form onSubmit={
+      <form
+        data-testid="BrandForm"
+        onSubmit={
         (event) => {
           event.preventDefault();
           setErrors({ validator: validate(brand) });
