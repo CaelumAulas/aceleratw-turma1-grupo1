@@ -31,35 +31,34 @@ const BrandsForm = ({ sendBrand }) => {
     return isBrandValid;
   }
 
-  function sendForm(brand) {
-    if (brand.length === 0) {
-      return false;
-    }
-    sendBrand(brand);
-  }
-
   return (
     <section>
       <form
         data-testid="BrandForm"
-        onSubmit={
-        (event) => {
+        onSubmit={(event) => {
           event.preventDefault();
           setErrors({ validator: validate(brand) });
-          sendForm(brand)
-        }
-      } className="brandsForm" noValidate autoComplete="off">
+          if (brand.length === 0) {
+            return false;
+          }
+          sendBrand(brand)
+        }}
+        className="brandsForm"
+        noValidate
+        autoComplete="off"
+      >
         <div className="brandsForm--inputs">
           <TextField
             onChange={(event) => {
               setBrand(event.target.value);
             }}
             onBlur={(event) => {
-              setErrors({ validator: validate(brand) });
+              setErrors({ validator: validate(event.target.brand) });
             }}
             error={!errors.validator.isvalid}
             helperText={errors.validator.text}
             id="standard-basic"
+            inputProps={{ "data-testid": "brandInput" }}
             value={brand}
             label="Marca"
             name="brand"
