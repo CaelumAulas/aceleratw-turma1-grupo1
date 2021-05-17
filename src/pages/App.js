@@ -8,39 +8,43 @@ import SignUp from "../pages/SignUp/SignUp";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Users from "../pages/Users/Users";
 import Brands from "../pages/Brands/Brands";
-import AddUser from "../pages/AddUser/AddUser";
-import RegisterVehicles from "../pages/RegisterVehicles/RegisterVehicles";
+import RegisterVehicles from './RegisterVehicles/RegisterVehicles';
+import AddBrands from "../pages/Brands/AddBrands";
+import Vehicles from './Vehicles/Vehicles';
 
 const App = () => {
-    return (
-        <div className="App">
-            <Router>
-                <Switch>
-                    <Route path="/usuarios/cadastrar-usuarios">
-                        <AddUser/>
-                    </Route>
-                    <Route path="/usuarios">
-                        <Users/>
-                    </Route>
-                    <Route path="/marcas">
-                        <Brands/>
-                    </Route>
-                    <Route path="/signup">
-                        <SignUp/>
-                    </Route>
-                    <Route path="/login">
-                        <Login/>
-                    </Route>
-                    <Route path="/cadastro-veiculo">
-                      <RegisterVehicles />
-                    </Route>
-                    <Route path="/">
-                        <Dashboard/>
-                    </Route>
-                </Switch>
-            </Router>
-        </div>
-    );
+  return (
+    <div className="App">
+      <Router>
+        <Switch>
+          <Route path="/usuarios">
+            <Users />
+          </Route>
+          <Route path="/marcas">
+            <Brands />
+          </Route>
+          <Route path="/signup">
+            <SignUp />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/cadastro-veiculo">
+            <RegisterVehicles />
+          </Route>
+          <Route path="/cadastro-marca">
+            <AddBrands />
+          </Route>
+          <Route path="/veiculos">
+            <Vehicles />
+          </Route>
+          <Route exact path="/">
+            <Dashboard />
+          </Route>
+        </Switch>
+      </Router>
+    </div>
+  );
 };
 
 export default App;
