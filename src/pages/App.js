@@ -10,6 +10,7 @@ import Users from "../pages/Users/Users";
 import Brands from "../pages/Brands/Brands";
 import RegisterVehicles from './RegisterVehicles/RegisterVehicles';
 import AddBrands from "../pages/Brands/AddBrands";
+import Vehicles from './Vehicles/Vehicles';
 
 const App = () => {
   return (
@@ -33,6 +34,9 @@ const App = () => {
           </Route>
           <Route path="/cadastro-marca">
             <AddBrands />
+          </Route>
+          <Route path="/veiculos">
+            <Vehicles />
           </Route>
           <Route exact path="/">
             <Dashboard />
