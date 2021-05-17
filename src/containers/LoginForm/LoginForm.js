@@ -7,7 +7,7 @@ const LoginForm = ({ toSend }) => {
   const [password, setPassword] = useState("");
   const [user, setUser] = useState("");
   const [errors, setErrors] = useState({
-    validator: { buttonEnabled: false, isvalid: true, text: "" },
+    validator: { buttonEnabled: false, isValid: true, text: "" },
   });
 
   function passwordValidation(password) {
@@ -18,7 +18,7 @@ const LoginForm = ({ toSend }) => {
         text: "A senha deve ter pelo menos 8 dígitos",
       };
     }
-    return { buttonEnabled: true, valido: true, text: "" };
+    return { buttonEnabled: true, isValid: true, text: "" };
   }
 
   return (
@@ -58,7 +58,7 @@ const LoginForm = ({ toSend }) => {
             onBlur={(event) => {
               setErrors({ validator: passwordValidation(password) });
             }}
-            error={!errors.validator.isvalid}
+            error={!errors.validator.isValid}
             helperText={errors.validator.text}
             variant="outlined"
             margin="normal"

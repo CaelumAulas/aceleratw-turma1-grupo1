@@ -78,7 +78,7 @@ const BaseLayout = (props) => {
       .replace(/[\u0300-\u036f]/g, "")
       .toLowerCase();
 
-    if (URLpath != "dashboard") {
+    if (URLpath !== "dashboard") {
       history.push(`/${URLpath}`);
     } else {
       history.push("/");

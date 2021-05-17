@@ -1,16 +1,17 @@
-import React from "react";
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import React from "react"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
-import "./App.css";
+import "./App.css"
 
-import Login from "../pages/Login/Login";
-import SignUp from "../pages/SignUp/SignUp";
-import Dashboard from "../pages/Dashboard/Dashboard";
-import Users from "../pages/Users/Users";
-import Brands from "../pages/Brands/Brands";
-import RegisterVehicles from './RegisterVehicles/RegisterVehicles';
-import AddBrands from "../pages/Brands/AddBrands";
-import Vehicles from './Vehicles/Vehicles';
+import Login from "../pages/Login/Login"
+import SignUp from "../pages/SignUp/SignUp"
+import Dashboard from "../pages/Dashboard/Dashboard"
+import Users from "../pages/Users/Users"
+import Brands from "../pages/Brands/Brands"
+import RegisterVehicles from './RegisterVehicles/RegisterVehicles'
+import AddBrands from "../pages/Brands/AddBrands"
+import AddUsers from "../pages/Users/AddUsers"
+import Vehicles from './Vehicles/Vehicles'
 
 const App = () => {
   return (
@@ -19,6 +20,9 @@ const App = () => {
         <Switch>
           <Route path="/usuarios">
             <Users />
+          </Route>
+          <Route path="/cadastro-usuario">
+            <AddUsers />
           </Route>
           <Route path="/marcas">
             <Brands />
@@ -44,7 +48,7 @@ const App = () => {
         </Switch>
       </Router>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
