@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { useHistory } from "react-router-dom";
 
@@ -65,6 +65,7 @@ const BaseLayout = (props) => {
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [loged, setLoged] = useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -78,21 +79,59 @@ const BaseLayout = (props) => {
       .replace(/[\u0300-\u036f]/g, "")
       .toLowerCase();
 
-    if (URLpath != "dashboard") {
-      history.push(`/${URLpath}`);
-    } else {
-      history.push("/");
-    }
+    history.push(`/${URLpath}`);
   }
 
   function logOut() {
-    console.log("fazer funcão de logOut");
+    setLoged(false);
   }
 
-  const drawerContent = (
+  function login() {
+    //troca estado quando estiver logado
+  }
+
+  useEffect(() => {
+    console.log(`troca pra ${loged}`);
+  }, [loged]);
+
+  const notLogedDrawerContent = (
     <div>
       <div className={classes.toolbar} />
       <Divider />
+      <List>
+        <ListItem
+          button
+          key="login"
+          onClick={(event) => {
+            handleClick(event.target.innerText);
+          }}
+        >
+          <ListItemIcon>
+            <ArrowForwardIcon />
+          </ListItemIcon>
+          <ListItemText>Login</ListItemText>
+        </ListItem>
+        <ListItem
+          button
+          key="veiculos"
+          onClick={(event) => {
+            handleClick(event.target.innerText);
+          }}
+        >
+          <ListItemIcon>
+            <DirectionsCarIcon />
+          </ListItemIcon>
+          <ListItemText>Veículos</ListItemText>
+        </ListItem>
+      </List>
+      <Divider />
+    </div>
+  );
+  const fulldrawerContent = (
+    <div>
+      <div className={classes.toolbar} />
+      <Divider />
+
       <List>
         <ListItem
           button
@@ -117,18 +156,6 @@ const BaseLayout = (props) => {
             <PersonAddIcon />
           </ListItemIcon>
           <ListItemText>signup</ListItemText>
-        </ListItem>
-        <ListItem
-          button
-          key="login"
-          onClick={(event) => {
-            handleClick(event.target.innerText);
-          }}
-        >
-          <ListItemIcon>
-            <ArrowForwardIcon />
-          </ListItemIcon>
-          <ListItemText>Login</ListItemText>
         </ListItem>
         <ListItem
           button
@@ -219,7 +246,23 @@ const BaseLayout = (props) => {
               keepMounted: true,
             }}
           >
-            {drawerContent}
+            {!loged ? notLogedDrawerContent : fulldrawerContent}
+          </Drawer>
+
+          <Drawer
+            container={container}
+            variant="temporary"
+            anchor={theme.direction === "rtl" ? "right" : "left"}
+            open={mobileOpen}
+            onClose={handleDrawerToggle}
+            classes={{
+              paper: classes.drawerPaper,
+            }}
+            ModalProps={{
+              keepMounted: true,
+            }}
+          >
+            {!loged ? notLogedDrawerContent : fulldrawerContent}
           </Drawer>
         </Hidden>
         <Hidden xsDown implementation="css">
@@ -230,7 +273,7 @@ const BaseLayout = (props) => {
             variant="permanent"
             open
           >
-            {drawerContent}
+            {!loged ? notLogedDrawerContent : fulldrawerContent}
           </Drawer>
         </Hidden>
       </nav>

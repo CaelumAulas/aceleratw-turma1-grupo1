@@ -8,9 +8,9 @@ import SignUp from "../pages/SignUp/SignUp";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Users from "../pages/Users/Users";
 import Brands from "../pages/Brands/Brands";
-import RegisterVehicles from './RegisterVehicles/RegisterVehicles';
+import RegisterVehicles from "./RegisterVehicles/RegisterVehicles";
 import AddBrands from "../pages/Brands/AddBrands";
-import Vehicles from './Vehicles/Vehicles';
+import Vehicles from "./Vehicles/Vehicles";
 
 const App = () => {
   return (
@@ -38,8 +38,11 @@ const App = () => {
           <Route path="/veiculos">
             <Vehicles />
           </Route>
-          <Route exact path="/">
+          <Route path="/dashboard">
             <Dashboard />
+          </Route>
+          <Route exact path="/">
+            <Vehicles />
           </Route>
         </Switch>
       </Router>

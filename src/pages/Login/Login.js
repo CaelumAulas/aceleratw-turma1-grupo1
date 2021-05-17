@@ -9,8 +9,8 @@ const Login = () => (
   </BaseLayout>
 );
 
-function collectUser(user) {
-  console.log(user);
+export function collectUser(user) {
+  return user;
   //chamar o método de enviar para API
 }
 

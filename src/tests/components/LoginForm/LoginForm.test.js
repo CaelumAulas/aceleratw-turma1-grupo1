@@ -39,6 +39,7 @@ describe("Testando componente de Login no formulario", () => {
 
     expect(screen.getByTestId("LoginButton").disabled).toBe(true);
   });
+
   it("Ao clicar no Botão, chama o método de validação da senha", () => {
     const onSubmit = jest.fn();
 
