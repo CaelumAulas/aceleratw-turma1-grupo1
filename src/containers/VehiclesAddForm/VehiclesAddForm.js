@@ -19,7 +19,7 @@ const VehiclesAddForm = ({toSend}) => {
         return {index, vehicle};
     }
 
-    const rows = [
+    const brands = [
         createData(1, 'Corsa'),
         createData(2, 'Uno'),
         createData(3, 'Gol'),
@@ -52,6 +52,7 @@ const VehiclesAddForm = ({toSend}) => {
     };
 
     const handleValueChange = (event) => {
+        setErrors({validator: isValueValid(event.target.value)})
         setValue(event.target.value);
     };
 
@@ -80,59 +81,62 @@ const VehiclesAddForm = ({toSend}) => {
 
 
     return (
-        <Container maxWidth="">
+        <Container>
             <form variant="filled"
                 onSubmit={(event) => submitForm(event)}
+                data-testid="VehiclesAddForm"
                 className="vehiclesAddForm"
                 noValidate
                 autoComplete="off">
                 <div className="vehiclesAddForm--select">
-                    <InputLabel id="standard-basic">Marca</InputLabel>
-                    <Select onChange={handleMarcaSelectionChange}
-                        id="standard-basic"
-                        value={brand}
-                        label="Marca"
-                        required>
+                <TextField
+                    id="brand"
+                    data-testid="brand"
+                    select
+                    label="Marca"
+                    value={brand}
+                    onChange={handleMarcaSelectionChange}
+                    >
+
                         <MenuItem value=""><em>Nenhum</em></MenuItem>
-                        {rows.map((row) => { 
-                            return <MenuItem value={row.index}>{row.vehicle}</MenuItem>;
+                        {brands.map((row) => { 
+                            return <MenuItem value={row.index} key={row.index}>{row.vehicle}</MenuItem>;
                         })} 
-                    </Select>
+                </TextField>
+                   
                 </div>
                 <div className="vehiclesAddForm--inputs">
                     <TextField onChange={handleModeloChange}
                         value={model}
-                        id="standard-basic"
+                        id="model"
+                        data-testid="model"
                         label="Modelo"
                         required/>
                     <TextField onChange={handleYearChange}
                         value={year}
-                        id="standard-basic"
+                        id="year"
+                        data-testid="year"
                         label="Ano"
                         type="number"
                         required/>
                     <TextField onChange={handleValueChange}
                         value={value}
-                        onBlur={
-                            (event) => {
-                                setErrors({validator: isValueValid(value)})
-                            }
-                        }
-                        error={
-                            !errors.validator.isValid
-                        }
-                        helperText={
-                            errors.validator.text
-                        }
-                        id="standard-basic"
+                        error={!errors.validator.isValid}
+                        helperText={errors.validator.text}
+                        id="price"
+                        data-testid="price"
                         label="Valor"
                         type="number"
                         required/>
                 </div>
             <Button variant="contained" color="primary" type="submit"
                 disabled={
-                    !brand || !model || !year || !value || !errors.validator.buttonEnabled
-            }>
+                    !brand ||
+                    !model || 
+                    !year || 
+                    !value || 
+                    !errors.validator.buttonEnabled
+                    }>
                 Cadastrar
             </Button>
             <Button variant="contained" color="secondary"

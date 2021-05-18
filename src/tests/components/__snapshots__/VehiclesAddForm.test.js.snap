@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testando componentes de Adicionar Veículos valor menor que 0 retorna erro  1`] = `
+<div
+  class="MuiFormControl-root MuiTextField-root"
+  data-testid="price"
+>
+  <label
+    class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated Mui-required Mui-required"
+    data-shrink="false"
+    for="price"
+    id="price-label"
+  >
+    Valor
+    <span
+      aria-hidden="true"
+      class="MuiFormLabel-asterisk MuiInputLabel-asterisk"
+    >
+       
+      *
+    </span>
+  </label>
+  <div
+    class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
+  >
+    <input
+      aria-invalid="false"
+      class="MuiInputBase-input MuiInput-input"
+      id="price"
+      required=""
+      type="number"
+      value=""
+    />
+  </div>
+  
+</div>
+`;
