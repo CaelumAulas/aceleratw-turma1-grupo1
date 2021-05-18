@@ -1,17 +1,21 @@
 import React from "react";
+import { buscaUsuario } from "../../api/users/UsersApi";
 
 import BaseLayout from "../../containers/BaseLayout/BaseLayout";
 import LoginForm from "../../containers/LoginForm/LoginForm";
 
-const Login = () => (
-  <BaseLayout pageName="Login">
-    <LoginForm toSend={collectUser} />
-  </BaseLayout>
-);
+const Login = () => {
+  return (
+    <BaseLayout pageName="Login">
+      <LoginForm toSend={collectUser} />
+    </BaseLayout>
+  );
+};
 
 export function collectUser(user) {
-  return user;
-  //chamar o método de enviar para API
+  const resposta = buscaUsuario(user);
+
+  console.log(`aqui ${resposta}`);
 }
 
 export default Login;
