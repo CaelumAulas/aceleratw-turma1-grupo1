@@ -10,6 +10,7 @@ import Users from "../pages/Users/Users";
 import Brands from "../pages/Brands/Brands";
 import RegisterVehicles from "./RegisterVehicles/RegisterVehicles";
 import AddBrands from "../pages/Brands/AddBrands";
+import AddUsers from "../pages/Users/AddUsers";
 import Vehicles from "./Vehicles/Vehicles";
 
 const App = () => {
@@ -19,6 +20,9 @@ const App = () => {
         <Switch>
           <Route path="/usuarios">
             <Users />
+          </Route>
+          <Route path="/cadastro-usuario">
+            <AddUsers />
           </Route>
           <Route path="/marcas">
             <Brands />
