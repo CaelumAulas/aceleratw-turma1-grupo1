@@ -46,11 +46,18 @@ const VehiclesTable = () => (
       </Table>
     </TableContainer>
     <div className="vehiclesTable--actions">
-      <Button variant="contained" color="primary">
+      <Button
+        variant="contained"
+        color="secondary"
+      >
       Excluir
       </Button>
       <Button variant="contained">Alterar</Button>
-      <Button variant="contained">Incluir</Button>
+      <Button variant="contained" onClick={() => {
+        window.location.href = '/cadastro-veiculo';
+      }}>
+        Incluir
+      </Button>
     </div>
   </section>
 )

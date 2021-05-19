@@ -39,13 +39,17 @@ const BrandsTable = () => (
         </TableBody>
       </Table>
     </TableContainer>
-    <Button variant="contained" color="primary">
+    <Button 
+    variant="contained"
+    color="secondary">
       Excluir
     </Button>
-    <Button variant="contained">alterar</Button>
+    <Button variant="contained">Alterar</Button>
     <Button variant="contained" onClick={() => {
       window.location.href = '/cadastro-marca';
-    }}>incluir</Button>
+    }}>
+      Incluir
+    </Button>
 
   </section>
 );

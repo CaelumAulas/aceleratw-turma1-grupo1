@@ -15,8 +15,8 @@ const UserForm = ({ toSend }) => {
     if (userPassword.length < 8) {
       return {
         buttonEnabled: false,
-        validate: false,
         text: "A senha deve ter pelo menos 8 dígitos",
+        validate: false,
       }
     }
     return { buttonEnabled: true, isValid: true, text: "" }
@@ -26,8 +26,8 @@ const UserForm = ({ toSend }) => {
     if (passwordConfirmation !== userPassword) {
       return {
         buttonEnabled: false,
-        validate: false,
         text: "As senhas devem ser iguais.",
+        validate: false,
       }
     }
     return { buttonEnabled: true, isValid: true, text: "" }
@@ -36,75 +36,75 @@ const UserForm = ({ toSend }) => {
   return (
     <Container maxWidth="sm">
       <form
+        autoComplete="off"
+        className="userForm"
         data-testid="UserForm"
+        noValidate
         onSubmit={(event) => {
           event.preventDefault()
           toSend({ user, userPassword, passwordConfirmation })
         }}
-        className="userForm"
-        noValidate
-        autoComplete="off"
       >
         <div className="userForm--inputs">
           <TextField
+            fullWidth
+            id="standard-basic"
+            inputProps={{ "data-testid": "user" }}
+            label="Usuário"
+            margin="normal"
+            required
+            type="email"
+            value={user}
+            variant="outlined"
             onChange={(event) => {
               setUser(event.target.value)
             }}
-            value={user}
-            type="email"
-            required
-            variant="outlined"
-            id="standard-basic"
-            label="Usuário"
-            margin="normal"
-            inputProps={{ "data-testid": "user" }}
-            fullWidth
           />
           <TextField
+            error={!errors.validator.isValid}
+            fullWidth
+            helperText={errors.validator.text}
+            id="standard-basic"
+            inputProps={{ "data-testid": "password" }}
+            label="Senha"
+            margin="normal"
             required
             type="password"
-            onChange={(event) => {
-              setPassword(event.target.value)
-            }}
             value={userPassword}
+            variant="outlined"
             onBlur={() => {
               setErrors({ validator: passwordValidation(userPassword) })
             }}
-            error={!errors.validator.isValid}
-            helperText={errors.validator.text}
-            variant="outlined"
-            margin="normal"
-            id="standard-basic"
-            label="Senha"
-            fullWidth
-            inputProps={{ "data-testid": "password" }}
+            onChange={(event) => {
+              setPassword(event.target.value)
+            }}
           />
           <TextField
+            error={!errors.validator.isValid}
+            fullWidth
+            helperText={errors.validator.text}
+            id="standard-basic"
+            inputProps={{ "data-testid": "passwordConfirmation" }}
+            label="Confirmar senha"
+            margin="normal"
             required
             type="password"
-            onChange={(event) => {
-              setPasswordConfirmation(event.target.value)
-            }}
             value={passwordConfirmation}
+            variant="outlined"
             onBlur={() => {
               setErrors({ validator: passwordConfirmationValidation(userPassword, passwordConfirmation) })
             }}
-            error={!errors.validator.isValid}
-            helperText={errors.validator.text}
-            variant="outlined"
-            margin="normal"
-            id="standard-basic"
-            label="Confirmar senha"
-            fullWidth
-            inputProps={{ "data-testid": "passwordConfirmation" }}
-          />
+            onChange={(event) => {
+              setPasswordConfirmation(event.target.value)
+            }}
+            />
         </div>
         <Button
+          color="primary"
+          data-testid="userFormButton"
           disabled={!errors.validator.buttonEnabled}
           type="submit"
           variant="contained"
-          color="primary"
-          data-testid="userFormButton"
         >
           Logar
         </Button>
