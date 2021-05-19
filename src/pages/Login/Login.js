@@ -1,5 +1,5 @@
 import React from "react";
-import { buscaUsuario } from "../../api/users/UsersApi";
+import { FindUser } from "../../api/users/UsersApi";
 
 import BaseLayout from "../../containers/BaseLayout/BaseLayout";
 import LoginForm from "../../containers/LoginForm/LoginForm";
@@ -13,7 +13,7 @@ const Login = () => {
 };
 
 export function collectUser(user) {
-  const resposta = buscaUsuario(user);
+  const resposta = FindUser(user);
 
   console.log(`aqui ${resposta}`);
 }
