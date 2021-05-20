@@ -31,22 +31,22 @@ const BrandsForm = ({ sendBrand }) => {
     return isBrandValid;
   }
 
-  function sendForm(brand) {
-    if (brand.length === 0) {
-      return false;
-    }
-    sendBrand(brand);
-  }
-
   return (
     <section>
-      <form onSubmit={
-        (event) => {
+      <form
+        data-testid="BrandForm"
+        onSubmit={(event) => {
           event.preventDefault();
           setErrors({ validator: validate(brand) });
-          sendForm(brand)
-        }
-      } className="brandsForm" noValidate autoComplete="off">
+          if (brand.length === 0) {
+            return false;
+          }
+          sendBrand(brand)
+        }}
+        className="brandsForm"
+        noValidate
+        autoComplete="off"
+      >
         <div className="brandsForm--inputs">
           <TextField
             error={!errors.validator.isvalid}
