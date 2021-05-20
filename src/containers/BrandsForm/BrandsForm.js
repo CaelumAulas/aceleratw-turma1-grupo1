@@ -49,20 +49,22 @@ const BrandsForm = ({ sendBrand }) => {
       >
         <div className="brandsForm--inputs">
           <TextField
+            error={!errors.validator.isvalid}
+            fullWidth
+            helperText={errors.validator.text}
+            id="standard-basic"
+            label="Marca"
+            margin="normal"
+            name="brand"
+            required
+            value={brand}
+            variant="outlined"
             onChange={(event) => {
               setBrand(event.target.value);
             }}
             onBlur={(event) => {
-              setErrors({ validator: validate(event.target.value) });
+              setErrors({ validator: validate(brand) });
             }}
-            error={!errors.validator.isvalid}
-            helperText={errors.validator.text}
-            id="standard-basic"
-            inputProps={{ "data-testid": "brandInput" }}
-            value={brand}
-            label="Marca"
-            name="brand"
-            required
           />
         </div>
         <Button
@@ -71,9 +73,7 @@ const BrandsForm = ({ sendBrand }) => {
         >
           Cadastrar
         </Button>
-        <Button
-          variant="contained"
-        >
+        <Button variant="contained">
           Cancelar
         </Button>
       </form>
