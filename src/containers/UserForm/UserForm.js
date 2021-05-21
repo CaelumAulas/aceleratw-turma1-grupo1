@@ -38,6 +38,7 @@ const UserForm = ({ toSend }) => {
       <form
         autoComplete="off"
         className="userForm"
+        id="UserForm"
         data-testid="UserForm"
         noValidate
         onSubmit={(event) => {
@@ -49,7 +50,7 @@ const UserForm = ({ toSend }) => {
           <TextField
             fullWidth
             id="standard-basic"
-            inputProps={{ "data-testid": "user" }}
+            inputProps={{ "data-testid": "email" }}
             label="Usuário"
             margin="normal"
             required
@@ -97,7 +98,7 @@ const UserForm = ({ toSend }) => {
             onChange={(event) => {
               setPasswordConfirmation(event.target.value)
             }}
-            />
+          />
         </div>
         <Button
           color="primary"
