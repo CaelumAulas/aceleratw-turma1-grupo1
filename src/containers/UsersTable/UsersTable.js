@@ -13,11 +13,11 @@ import "./style.css";
 import { findAllUsers } from "../../api/users/UsersApi";
 
 const UsersTable = () => {
-  let { path, url } = useRouteMatch();
+  let { url } = useRouteMatch();
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    findAllUsers("/usuario", setUsers);
+    findAllUsers("/users", setUsers);
   }, []);
 
   return (
@@ -31,9 +31,9 @@ const UsersTable = () => {
           </TableHead>
           <TableBody>
             {users.map((row) => (
-              <TableRow key={row.user}>
+              <TableRow key={row.login}>
                 <TableCell align="left" component="th" scope="row">
-                  {row.user}
+                  {row.login}
                 </TableCell>
               </TableRow>
             ))}

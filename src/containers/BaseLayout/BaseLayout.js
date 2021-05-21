@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { useHistory } from "react-router-dom";
 
@@ -61,12 +61,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const BaseLayout = (props) => {
-  const { window } = props;
+  const { window, status } = props;
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [loged, setLoged] = useState(false);
 
+  console.log(status);
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -82,17 +82,10 @@ const BaseLayout = (props) => {
     history.push(`/${URLpath}`);
   }
 
-  function logOut() {
-    setLoged(false);
-  }
-
-  function login() {
-    //troca estado quando estiver logado
-  }
-
-  useEffect(() => {
-    console.log(`troca pra ${loged}`);
-  }, [loged]);
+  // useEffect(() => {
+  //   setLogged(props.status);
+  //   console.log(`troca pra ${logged}`);
+  // }, [logged]);
 
   const notLogedDrawerContent = (
     <div>
@@ -193,13 +186,7 @@ const BaseLayout = (props) => {
           </ListItemIcon>
           <ListItemText>Marcas</ListItemText>
         </ListItem>
-        <ListItem
-          button
-          key="sair"
-          onClick={(event) => {
-            logOut();
-          }}
-        >
+        <ListItem button key="sair" onClick={(event) => {}}>
           <ListItemIcon>
             <ExitToAppIcon />
           </ListItemIcon>
@@ -246,7 +233,7 @@ const BaseLayout = (props) => {
               keepMounted: true,
             }}
           >
-            {!loged ? notLogedDrawerContent : fulldrawerContent}
+            {!status ? notLogedDrawerContent : fulldrawerContent}
           </Drawer>
 
           <Drawer
@@ -262,7 +249,7 @@ const BaseLayout = (props) => {
               keepMounted: true,
             }}
           >
-            {!loged ? notLogedDrawerContent : fulldrawerContent}
+            {!status ? notLogedDrawerContent : fulldrawerContent}
           </Drawer>
         </Hidden>
         <Hidden xsDown implementation="css">
@@ -273,7 +260,7 @@ const BaseLayout = (props) => {
             variant="permanent"
             open
           >
-            {!loged ? notLogedDrawerContent : fulldrawerContent}
+            {!status ? notLogedDrawerContent : fulldrawerContent}
           </Drawer>
         </Hidden>
       </nav>

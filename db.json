@@ -1,11 +1,11 @@
 {
     "usuario":[
         {
-            "user" : "admin",
+            "login" : "admin",
             "password" : "admin123"
         },
         {
-            "user": "root",
+            "login": "root",
             "password": "root12345"
         }
     ]

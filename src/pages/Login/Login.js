@@ -1,21 +1,23 @@
-import React from "react";
-import { FindUser } from "../../api/users/UsersApi";
+import React, { useState } from "react";
+import { login } from "../../api/users/UsersApi";
 
 import BaseLayout from "../../containers/BaseLayout/BaseLayout";
 import LoginForm from "../../containers/LoginForm/LoginForm";
 
 const Login = () => {
+  const [status, setStatus] = useState({});
+  const [logged, setLogged] = useState(false);
+
+  function collectUser(user) {
+    login(user, setStatus);
+    if (status == 200) setLogged(true);
+  }
+
   return (
-    <BaseLayout pageName="Login">
+    <BaseLayout pageName="Login" status={logged}>
       <LoginForm toSend={collectUser} />
     </BaseLayout>
   );
 };
-
-export function collectUser(user) {
-  const resposta = FindUser(user);
-
-  console.log(`aqui ${resposta}`);
-}
 
 export default Login;
