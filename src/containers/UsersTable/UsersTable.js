@@ -19,7 +19,7 @@ const UsersTable = () => {
   useEffect(() => {
     findAllUsers("/users", setUsers);
   }, []);
-
+ 
   return (
     <section>
       <TableContainer component={Paper}>

@@ -27,7 +27,7 @@ const App = () => {
           <Route path="/marcas">
             <Brands />
           </Route>
-          <Route path="/signup">
+          <Route path="/cadastrar">
             <SignUp />
           </Route>
           <Route path="/login">

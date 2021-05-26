@@ -50,7 +50,12 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
-  toolbar: theme.mixins.toolbar,
+  toolbar: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "65px",
+  },
   drawerPaper: {
     width: drawerWidth,
   },
@@ -89,7 +94,11 @@ const BaseLayout = (props) => {
 
   const notLogedDrawerContent = (
     <div>
-      <div className={classes.toolbar} />
+      <div className={classes.toolbar}>
+        <Typography variant="h5" noWrap>
+          Carango Bom
+        </Typography>
+      </div>
       <Divider />
       <List>
         <ListItem

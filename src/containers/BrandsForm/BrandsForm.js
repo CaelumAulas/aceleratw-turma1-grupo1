@@ -31,37 +31,40 @@ const BrandsForm = ({ sendBrand }) => {
     return isBrandValid;
   }
 
-  function sendForm(brand) {
-    if (brand.length === 0) {
-      return false;
-    }
-    sendBrand(brand);
-  }
-
   return (
     <section>
-      <form onSubmit={
-        (event) => {
+      <form
+        data-testid="BrandForm"
+        onSubmit={(event) => {
           event.preventDefault();
           setErrors({ validator: validate(brand) });
-          sendForm(brand)
-        }
-      } className="brandsForm" noValidate autoComplete="off">
+          if (brand.length === 0) {
+            return false;
+          }
+          sendBrand(brand)
+        }}
+        className="brandsForm"
+        noValidate
+        autoComplete="off"
+      >
         <div className="brandsForm--inputs">
           <TextField
+            error={!errors.validator.isvalid}
+            fullWidth
+            helperText={errors.validator.text}
+            id="standard-basic"
+            label="Marca"
+            margin="normal"
+            name="brand"
+            required
+            value={brand}
+            variant="outlined"
             onChange={(event) => {
               setBrand(event.target.value);
             }}
             onBlur={(event) => {
               setErrors({ validator: validate(brand) });
             }}
-            error={!errors.validator.isvalid}
-            helperText={errors.validator.text}
-            id="standard-basic"
-            value={brand}
-            label="Marca"
-            name="brand"
-            required
           />
         </div>
         <Button
@@ -70,9 +73,7 @@ const BrandsForm = ({ sendBrand }) => {
         >
           Cadastrar
         </Button>
-        <Button
-          variant="contained"
-        >
+        <Button variant="contained">
           Cancelar
         </Button>
       </form>
