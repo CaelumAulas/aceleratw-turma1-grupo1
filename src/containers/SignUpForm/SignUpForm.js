@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Button, TextField, Container } from "@material-ui/core";
 
-import "./style.css";
-
 const SignUpForm = ({ toSend }) => {
   const [password, setPassword] = useState("");
   const [user, setUser] = useState("");
