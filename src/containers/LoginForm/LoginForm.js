@@ -63,7 +63,7 @@ const LoginForm = ({ toSend }) => {
               setPassword(event.target.value);
             }}
             value={password}
-            onBlur={(event) => {
+            onBlur={() => {
               setErrors({ validator: passwordValidation(password) });
             }}
           />

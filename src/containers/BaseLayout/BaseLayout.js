@@ -66,11 +66,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const BaseLayout = (props) => {
-  const { window } = props;
+  const { window, status } = props;
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
+  console.log(status);
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -83,18 +84,15 @@ const BaseLayout = (props) => {
       .replace(/[\u0300-\u036f]/g, "")
       .toLowerCase();
 
-    if (URLpath !== "dashboard") {
-      history.push(`/${URLpath}`);
-    } else {
-      history.push("/");
-    }
+    history.push(`/${URLpath}`);
   }
 
-  function logOut() {
-    console.log("fazer funcão de logOut");
-  }
+  // useEffect(() => {
+  //   setLogged(props.status);
+  //   console.log(`troca pra ${logged}`);
+  // }, [logged]);
 
-  const drawerContent = (
+  const notLogedDrawerContent = (
     <div>
       <div className={classes.toolbar}>
         <Typography variant="h5" noWrap>
@@ -102,6 +100,40 @@ const BaseLayout = (props) => {
         </Typography>
       </div>
       <Divider />
+      <List>
+        <ListItem
+          button
+          key="login"
+          onClick={(event) => {
+            handleClick(event.target.innerText);
+          }}
+        >
+          <ListItemIcon>
+            <ArrowForwardIcon />
+          </ListItemIcon>
+          <ListItemText>Login</ListItemText>
+        </ListItem>
+        <ListItem
+          button
+          key="veiculos"
+          onClick={(event) => {
+            handleClick(event.target.innerText);
+          }}
+        >
+          <ListItemIcon>
+            <DirectionsCarIcon />
+          </ListItemIcon>
+          <ListItemText>Veículos</ListItemText>
+        </ListItem>
+      </List>
+      <Divider />
+    </div>
+  );
+  const fulldrawerContent = (
+    <div>
+      <div className={classes.toolbar} />
+      <Divider />
+
       <List>
         <ListItem
           button
@@ -125,19 +157,7 @@ const BaseLayout = (props) => {
           <ListItemIcon>
             <PersonAddIcon />
           </ListItemIcon>
-          <ListItemText>Cadastrar</ListItemText>
-        </ListItem>
-        <ListItem
-          button
-          key="login"
-          onClick={(event) => {
-            handleClick(event.target.innerText);
-          }}
-        >
-          <ListItemIcon>
-            <ArrowForwardIcon />
-          </ListItemIcon>
-          <ListItemText>Login</ListItemText>
+          <ListItemText>signup</ListItemText>
         </ListItem>
         <ListItem
           button
@@ -175,13 +195,7 @@ const BaseLayout = (props) => {
           </ListItemIcon>
           <ListItemText>Marcas</ListItemText>
         </ListItem>
-        <ListItem
-          button
-          key="sair"
-          onClick={(event) => {
-            logOut();
-          }}
-        >
+        <ListItem button key="sair" onClick={(event) => {}}>
           <ListItemIcon>
             <ExitToAppIcon />
           </ListItemIcon>
@@ -228,7 +242,23 @@ const BaseLayout = (props) => {
               keepMounted: true,
             }}
           >
-            {drawerContent}
+            {!status ? notLogedDrawerContent : fulldrawerContent}
+          </Drawer>
+
+          <Drawer
+            container={container}
+            variant="temporary"
+            anchor={theme.direction === "rtl" ? "right" : "left"}
+            open={mobileOpen}
+            onClose={handleDrawerToggle}
+            classes={{
+              paper: classes.drawerPaper,
+            }}
+            ModalProps={{
+              keepMounted: true,
+            }}
+          >
+            {!status ? notLogedDrawerContent : fulldrawerContent}
           </Drawer>
         </Hidden>
         <Hidden xsDown implementation="css">
@@ -239,7 +269,7 @@ const BaseLayout = (props) => {
             variant="permanent"
             open
           >
-            {drawerContent}
+            {!status ? notLogedDrawerContent : fulldrawerContent}
           </Drawer>
         </Hidden>
       </nav>
