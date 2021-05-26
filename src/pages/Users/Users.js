@@ -1,14 +1,12 @@
-import React from 'react'
+import React from "react";
 
-import BaseLayout from '../../containers/BaseLayout/BaseLayout'
-import UsersTable from '../../containers/UsersTable/UsersTable'
-
-
+import BaseLayout from "../../containers/BaseLayout/BaseLayout";
+import UsersTable from "../../containers/UsersTable/UsersTable";
 
 const Users = () => (
-    <BaseLayout pageName="Usuários">
-        <UsersTable/>
-    </BaseLayout>
-)
+  <BaseLayout pageName="Usuários">
+    <UsersTable />
+  </BaseLayout>
+);
 
-export default Users
+export default Users;

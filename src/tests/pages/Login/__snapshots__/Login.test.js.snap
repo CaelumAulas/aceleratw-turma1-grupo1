@@ -1,0 +1,272 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Página de Login O snapShot do component deve permanecer sempre o mesmo 1`] = `
+<div
+  class="makeStyles-root-1"
+>
+  <header
+    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-appBar-3 mui-fixed MuiPaper-elevation4"
+  >
+    <div
+      class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    >
+      <button
+        aria-label="open drawer"
+        class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-4 MuiIconButton-colorInherit MuiIconButton-edgeStart"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiIconButton-label"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+            />
+          </svg>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+      <h6
+        class="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap"
+      >
+        Login
+      </h6>
+    </div>
+  </header>
+  <nav
+    aria-label="mailbox folders"
+    class="makeStyles-drawerContent-2"
+  >
+    <div
+      class="PrivateHiddenCss-smUp-12"
+    />
+    <div
+      class="PrivateHiddenCss-xsDown-10"
+    >
+      <div
+        class="MuiDrawer-root MuiDrawer-docked"
+      >
+        <div
+          class="MuiPaper-root MuiDrawer-paper makeStyles-drawerPaper-6 MuiDrawer-paperAnchorLeft MuiDrawer-paperAnchorDockedLeft MuiPaper-elevation0"
+        >
+          <div>
+            <div
+              class="makeStyles-toolbar-5"
+            />
+            <hr
+              class="MuiDivider-root"
+            />
+            <ul
+              class="MuiList-root MuiList-padding"
+            >
+              <div
+                aria-disabled="false"
+                class="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button"
+                role="button"
+                tabindex="0"
+              >
+                <div
+                  class="MuiListItemIcon-root"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="MuiListItemText-root"
+                >
+                  <span
+                    class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+                  >
+                    Login
+                  </span>
+                </div>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </div>
+              <div
+                aria-disabled="false"
+                class="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button"
+                role="button"
+                tabindex="0"
+              >
+                <div
+                  class="MuiListItemIcon-root"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="MuiListItemText-root"
+                >
+                  <span
+                    class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+                  >
+                    Veículos
+                  </span>
+                </div>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </div>
+            </ul>
+            <hr
+              class="MuiDivider-root"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <main
+    class="makeStyles-content-7"
+  >
+    <div
+      class="makeStyles-toolbar-5"
+    />
+    <div
+      class="MuiContainer-root MuiContainer-maxWidthSm"
+    >
+      <form
+        autocomplete="off"
+        class="loginForm"
+        data-testid="LoginForm"
+        novalidate=""
+      >
+        <div
+          class="loginForm--inputs"
+        >
+          <div
+            class="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth"
+          >
+            <label
+              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined Mui-required Mui-required"
+              data-shrink="false"
+              for="standard-basic"
+              id="standard-basic-label"
+            >
+              Usuário
+              <span
+                aria-hidden="true"
+                class="MuiFormLabel-asterisk MuiInputLabel-asterisk"
+              >
+                 
+                *
+              </span>
+            </label>
+            <div
+              class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInputBase-input MuiOutlinedInput-input"
+                data-testid="user"
+                id="standard-basic"
+                required=""
+                type="email"
+                value=""
+              />
+              <fieldset
+                aria-hidden="true"
+                class="PrivateNotchedOutline-root-23 MuiOutlinedInput-notchedOutline"
+              >
+                <legend
+                  class="PrivateNotchedOutline-legendLabelled-25"
+                >
+                  <span>
+                    Usuário
+                     *
+                  </span>
+                </legend>
+              </fieldset>
+            </div>
+          </div>
+          <div
+            class="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth"
+          >
+            <label
+              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined Mui-required Mui-required"
+              data-shrink="false"
+              for="standard-basic"
+              id="standard-basic-label"
+            >
+              Senha
+              <span
+                aria-hidden="true"
+                class="MuiFormLabel-asterisk MuiInputLabel-asterisk"
+              >
+                 
+                *
+              </span>
+            </label>
+            <div
+              class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInputBase-input MuiOutlinedInput-input"
+                data-testid="password"
+                id="standard-basic"
+                required=""
+                type="password"
+                value=""
+              />
+              <fieldset
+                aria-hidden="true"
+                class="PrivateNotchedOutline-root-23 MuiOutlinedInput-notchedOutline"
+              >
+                <legend
+                  class="PrivateNotchedOutline-legendLabelled-25"
+                >
+                  <span>
+                    Senha
+                     *
+                  </span>
+                </legend>
+              </fieldset>
+            </div>
+            
+          </div>
+        </div>
+        <button
+          class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"
+          data-testid="LoginButton"
+          disabled=""
+          tabindex="-1"
+          type="submit"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            Logar
+          </span>
+        </button>
+      </form>
+    </div>
+  </main>
+</div>
+`;

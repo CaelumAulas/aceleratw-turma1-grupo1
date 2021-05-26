@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { Button, TextField, Container } from "@material-ui/core";
 
-import "./style.css";
-
-const LoginForm = ({ toSend }) => {
+const SignUpForm = ({ toSend }) => {
   const [password, setPassword] = useState("");
   const [user, setUser] = useState("");
   const [errors, setErrors] = useState({
@@ -25,15 +23,15 @@ const LoginForm = ({ toSend }) => {
     <Container maxWidth="sm">
       <form
         autoComplete="off"
-        className="loginForm"
-        data-testid="LoginForm"
+        className="signUpForm"
+        data-testid="SignUpForm"
         noValidate
         onSubmit={(event) => {
           event.preventDefault();
           toSend({ user, password });
         }}
       >
-        <div className="loginForm--inputs">
+        <div className="signUpForm--inputs">
           <TextField
             fullWidth
             id="standard-basic"
@@ -58,28 +56,28 @@ const LoginForm = ({ toSend }) => {
             margin="normal"
             required
             type="password"
-            variant="outlined"
-            onChange={(event) => {
-              setPassword(event.target.value);
-            }}
             value={password}
+            variant="outlined"
             onBlur={() => {
               setErrors({ validator: passwordValidation(password) });
+            }}
+            onChange={(event) => {
+              setPassword(event.target.value);
             }}
           />
         </div>
         <Button
           color="primary"
-          data-testid="LoginButton"
+          data-testid="SignUpForm"
           disabled={!errors.validator.buttonEnabled}
           type="submit"
           variant="contained"
         >
-          Logar
+          Cadastrar
         </Button>
       </form>
     </Container>
   );
 };
 
-export default LoginForm;
+export default SignUpForm;
